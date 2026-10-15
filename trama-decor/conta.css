@@ -117,3 +117,30 @@ main:has(.products-grid-search-suggestion) .page-header-title{font-size:28px;lin
 #ns-section-featured-categories_1791478843106 .heading-column .heading-block{text-align:center}
 section#ns-section-featured-categories_1791478843106 .swiper-slide{width:calc((100vw - 48px)/2)!important}
 }
+
+/* Formulários: placeholder legível (contraste ≥ 4,5:1), borda visível e foco claro (contato, login, cadastro) */
+.form-control::placeholder,.form-control-area::placeholder{color:#6b5a50;opacity:1}
+.form-control,.form-control-area{border-color:rgba(59,42,34,.55)}
+.form-control:focus,.form-control-area:focus{border-color:#934522;outline:2px solid #934522;outline-offset:2px}
+
+/* Contato: botão "Enviar" desabilitado (aguardando reCAPTCHA) com aviso, sem parecer ativo nem "apagado" */
+.js-winnie-pooh-form button[type=submit]:disabled{opacity:.55;cursor:not-allowed}
+.js-winnie-pooh-form:has(button[type=submit]:disabled)::after{content:"Preencha os campos e marque \201CNão sou um robô\201D para enviar.";display:block;margin-top:10px;font-size:13px;line-height:1.4;text-align:center;color:#6b5a50}
+
+/* Listagem: botão "Comprar" alinhado no fundo do card (preço com "% OFF" ocupa 2 linhas e desalinhava a linha) */
+.js-product-table>.product-item{display:flex;flex-direction:column}
+.js-product-table>.product-item .product-item-information{flex:1}
+.js-product-table>.product-item .product-item-quick-shop-container{margin-top:auto;padding-top:12px}
+
+/* Contato: formulário em cartão branco (mesmo estilo do login e da conta) */
+.js-winnie-pooh-form{box-sizing:border-box;padding:32px 32px 28px;background:#fff;border:1px solid rgba(59,42,34,.12);border-radius:16px;box-shadow:0 22px 44px -28px rgba(59,42,34,.35)}
+.js-winnie-pooh-form .form-control,.js-winnie-pooh-form .form-control-area{background:#fff;border-radius:10px}
+.js-winnie-pooh-form button[type=submit]{border-radius:999px}
+@media (max-width:767px){
+.js-winnie-pooh-form{padding:24px 20px 22px}
+}
+
+/* Contato: cartão centralizado, com título e breadcrumb alinhados à borda esquerda dele (a coluna direita do tema ficava vazia) */
+.contact-form-section .d-grid{display:block!important}
+.contact-form-container{max-width:640px;margin:0 auto}
+main:has(.contact-form-container) .page-header>.container{max-width:640px;margin-left:auto;margin-right:auto;padding-left:0;padding-right:0}
