@@ -224,6 +224,11 @@ body.template-product .product-thumb{display:block;width:100%;height:100%;border
 body.template-product .product-thumb.selected,body.template-product .product-thumb:hover{border-color:var(--pdp-accent)}
 body.template-product .product-thumb img{width:100%;height:100%;object-fit:cover}
 body.template-product .js-product-slider-thumbs-prev,body.template-product .js-product-slider-thumbs-next{display:none}
+/* Produto com uma foto só (sem miniaturas): imagem quadrada, recortada e centralizada, em vez de seguir a altura da foto */
+body.template-product .product-images:not(:has(.product-thumb-container)) .product-images-slider{aspect-ratio:1/1}
+body.template-product .product-images:not(:has(.product-thumb-container)) :is(.js-product-slider,.js-product-slide){height:100%}
+body.template-product .product-images:not(:has(.product-thumb-container)) .product-slide-link{display:block;height:100%;padding-bottom:0!important}
+body.template-product .product-images:not(:has(.product-thumb-container)) .product-slider-image{top:0;left:0;width:100%!important;height:100%!important;max-height:none!important;transform:none;object-fit:cover}
 
 /* Informações: o form usa display:contents para variações, frete e botão seguirem a ordem abaixo (envio e scripts do tema intactos) */
 body.template-product .product-info{width:auto;max-width:none;min-width:0;padding:0}
