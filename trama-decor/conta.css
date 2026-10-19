@@ -282,3 +282,12 @@ body.template-product .product-content .breadcrumbs>*{display:none}
 body.template-product .product-content .breadcrumbs>a.crumb:last-of-type{display:inline-block;margin:0;padding:0;text-decoration:none;color:var(--pdp-accent)}
 body.template-product .product-content .breadcrumbs>a.crumb:last-of-type::before{content:"\2039  ";font-size:16px;line-height:1}
 }
+
+/* Frete grátis: página do produto (texto/ícone vinham brancos sobre fundo creme) e selo da listagem */
+body.template-product .product-content .product-free-shipping{margin-top:14px}
+body.template-product .product-content .product-free-shipping-inner{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 10px;border-radius:999px;background:rgba(147,69,34,.08);border:1px solid rgba(147,69,34,.25);font-size:13px;font-weight:600;line-height:1.3;color:var(--pdp-accent)}
+body.template-product .product-content .product-free-shipping-icon,body.template-product .product-content .product-free-shipping .text-accent,body.template-product .product-content .product-free-shipping-body{color:var(--pdp-accent)}
+body.template-product .product-content .product-free-shipping-inner .free-shipping-icon{width:18px;height:18px;fill:currentColor;color:var(--pdp-accent)}
+body.template-product .product-content .product-free-shipping-body{width:auto;display:inline}
+.shipping-label.label{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:999px;background:#934522;color:#fff;font-size:11px;font-weight:600;letter-spacing:.04em;line-height:1.3}
+.shipping-label.label .label-icon{width:14px;height:14px;fill:currentColor;color:#fff}
