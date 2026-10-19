@@ -125,7 +125,7 @@ section#ns-section-featured-categories_1791478843106 .swiper-slide{width:calc((1
 
 /* Contato: botão "Enviar" desabilitado (aguardando reCAPTCHA) com aviso, sem parecer ativo nem "apagado" */
 .js-winnie-pooh-form button[type=submit]:disabled{opacity:.55;cursor:not-allowed}
-.js-winnie-pooh-form:has(button[type=submit]:disabled)::after{content:"Preencha os campos e marque \201CNão sou um robô\201D para enviar.";display:block;margin-top:10px;font-size:13px;line-height:1.4;text-align:center;color:#6b5a50}
+.js-winnie-pooh-form:has(button[type=submit]:disabled)::after{content:"Preencha os campos e marque \201CNão sou um robô\201D\20 para enviar.";display:block;margin-top:10px;font-size:13px;line-height:1.4;text-align:center;color:#6b5a50}
 
 /* Listagem: botão "Comprar" alinhado no fundo do card (preço com "% OFF" ocupa 2 linhas e desalinhava a linha) */
 .js-product-table>.product-item{display:flex;flex-direction:column}
@@ -203,3 +203,72 @@ main:has(.contact-form-container) .page-header>.container{max-width:640px;margin
 .notification-cart-container .notification-close{width:36px;height:36px;top:0;right:0}
 }
 @media (prefers-reduced-motion:reduce){.notification-cart-container{animation:none}}
+
+/* Página de produto (tema Ipanema), escopada em body.template-product. Para reverter, remova até o "FIM" */
+body.template-product{--pdp-muted:#6b5a50;--pdp-accent:#934522;--pdp-line:rgba(59,42,34,.12)}
+body.template-product .js-nubesdk-slot:empty{display:none}
+
+/* Duas colunas (desktop), no mesmo container de 1140px das seções em destaque */
+@media (min-width:768px){
+body.template-product #single-product .product-columns{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:start;max-width:1140px;margin:0 auto;padding:24px 16px 0}
+}
+
+/* Galeria: imagem com cantos arredondados e miniaturas em 3 colunas iguais */
+body.template-product .product-images{display:flex;flex-direction:column;gap:14px;width:100%;max-width:none;min-width:0}
+body.template-product .product-images-slider{border-radius:20px;overflow:hidden;background:#F1E3D3}
+body.template-product .product-images-thumbs{width:100%;margin:0;padding:0}
+body.template-product .js-product-slider-thumbs{width:100%!important;margin:0;overflow:visible}
+body.template-product .js-product-slider-thumbs .swiper-wrapper{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:auto!important;height:auto!important;transform:none!important}
+body.template-product .product-thumb-container{width:auto!important;height:auto!important;margin:0!important;aspect-ratio:1/1}
+body.template-product .product-thumb{display:block;width:100%;height:100%;border-radius:14px;overflow:hidden;border:2px solid transparent;background:#F1E3D3;transition:border-color .2s}
+body.template-product .product-thumb.selected,body.template-product .product-thumb:hover{border-color:var(--pdp-accent)}
+body.template-product .product-thumb img{width:100%;height:100%;object-fit:cover}
+body.template-product .js-product-slider-thumbs-prev,body.template-product .js-product-slider-thumbs-next{display:none}
+
+/* Informações: o form usa display:contents para variações, frete e botão seguirem a ordem abaixo (envio e scripts do tema intactos) */
+body.template-product .product-info{width:auto;max-width:none;min-width:0;padding:0}
+body.template-product .product-content{display:flex;flex-direction:column}
+body.template-product #product_form{display:contents}
+body.template-product .product-content .breadcrumbs{order:1;margin-bottom:10px;font-size:12px;color:var(--pdp-muted)}
+body.template-product .product-content .breadcrumbs a{color:var(--pdp-muted)}
+body.template-product .product-content .product-sku{display:none}
+body.template-product .product-content .product-name{order:2;margin:0 0 12px;font-size:28px;line-height:1.2}
+body.template-product .product-content .js-price-container{order:3;margin:0;padding:0}
+body.template-product .product-content .product-price-display{font-size:34px;font-weight:600;line-height:1.1;color:var(--pdp-accent)}
+body.template-product .product-content .js-product-discount-container{order:4;margin:6px 0 0;padding:0 0 18px;border-bottom:1px solid var(--pdp-line);font-size:13px;color:var(--pdp-muted)}
+body.template-product .product-content .js-free-shipping-minimum-message{order:5;margin-top:16px}
+
+/* Variações: tamanho em pílulas; cor em bolinhas com anel na selecionada (o tema força o tamanho do botão, por isso os !important) */
+body.template-product .product-content .js-product-variants{order:6;margin-top:18px}
+body.template-product .product-content .js-product-variants-group{margin-bottom:14px}
+body.template-product .product-content .js-product-variants-group:last-child{margin-bottom:0}
+body.template-product .product-content .js-product-variants .form-label{margin-bottom:10px;font-size:14px}
+body.template-product .product-content .btn-variant{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;line-height:1.3;border:1.5px solid var(--pdp-line);border-radius:999px;background:#fff;transition:border-color .2s,background-color .2s}
+body.template-product .product-content .btn-variant.selected{border-color:var(--pdp-accent);background:rgba(147,69,34,.10);box-shadow:0 0 0 1px var(--pdp-accent)}
+body.template-product .product-content .btn-variant.btn-variant-color{flex:none;width:34px!important;min-width:34px!important;height:34px!important;min-height:0;margin:0 6px 6px 0;padding:0!important;border:0;border-radius:50%;background:transparent;box-shadow:none;vertical-align:top}
+body.template-product .product-content .btn-variant.btn-variant-color .btn-variant-content{display:block;box-sizing:border-box;flex:0 0 34px;width:34px!important;height:34px!important;min-width:34px;min-height:34px;max-width:none;padding:0;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(59,42,34,.22)}
+body.template-product .product-content .btn-variant.btn-variant-color.selected{background:transparent;box-shadow:0 0 0 2px #F8EBDD,0 0 0 4px var(--pdp-accent)}
+body.template-product .product-content .btn-variant.btn-variant-color:not(.selected):hover{box-shadow:0 0 0 2px #F8EBDD,0 0 0 3px rgba(147,69,34,.45)}
+
+/* Estoque, frete e botão de compra */
+body.template-product .product-content .product-stock-alert{order:7;margin-top:12px}
+body.template-product .product-content .product-shipping-wrapper{order:8;width:100%;margin-top:16px;padding-top:16px;border-top:1px solid var(--pdp-line)}
+body.template-product .product-content .product-actions{order:9;grid-template-columns:auto 1fr;gap:12px;align-items:stretch;margin-top:18px}
+body.template-product .product-content .product-actions .btn-primary{min-height:54px;border-radius:999px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 14px 24px -14px rgba(147,69,34,.6)}
+body.template-product .product-content .product-added-message{order:10;margin-top:10px}
+
+/* Itens de confiança (só CSS, sem HTML extra) */
+body.template-product .product-content::after{order:11;display:block;margin-top:16px;font-size:13px;line-height:1.9;color:var(--pdp-muted);white-space:pre-line;content:"\2713  Pagamento seguro\A \2713  Informações de entrega e troca"}
+
+/* Celular: uma coluna e breadcrumb curto (só a categoria, com "‹") */
+@media (max-width:767px){
+body.template-product #single-product .product-columns{display:flex;flex-direction:column;gap:22px;padding:12px 16px 0}
+body.template-product .product-images-slider{border-radius:16px}
+body.template-product .js-product-slider-thumbs .swiper-wrapper{gap:8px}
+body.template-product .product-content .product-name{font-size:23px}
+body.template-product .product-content .product-price-display{font-size:30px}
+body.template-product .product-content .breadcrumbs{display:block;margin:0 0 8px;padding:0;font-size:13px;line-height:1.3}
+body.template-product .product-content .breadcrumbs>*{display:none}
+body.template-product .product-content .breadcrumbs>a.crumb:last-of-type{display:inline-block;margin:0;padding:0;text-decoration:none;color:var(--pdp-accent)}
+body.template-product .product-content .breadcrumbs>a.crumb:last-of-type::before{content:"\2039  ";font-size:16px;line-height:1}
+}
