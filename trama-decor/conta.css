@@ -144,6 +144,11 @@ section#ns-section-featured-categories_1791478843106 .swiper-slide{width:calc((1
 .contact-form-section .d-grid{display:block!important}
 .contact-form-container{max-width:640px;margin:0 auto}
 main:has(.contact-form-container) .page-header>.container{max-width:640px;margin-left:auto;margin-right:auto;padding-left:0;padding-right:0}
+/* Contato: a seção tem padding 0 inline, então o cartão ficava colado no rodapé */
+.contact-form-section{padding-bottom:64px!important}
+@media (max-width:767px){
+.contact-form-section{padding-bottom:40px!important}
+}
 
 /* Carrinho (desktop): produtos, entrega e resumo em cartões brancos */
 @media (min-width:768px){
