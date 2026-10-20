@@ -181,12 +181,6 @@ main:has(.contact-form-container) .page-header>.container{max-width:640px;margin
 .cart-totals-promotions,.cart-totals-promotions span{color:#934522}
 /* Custo de frete ("A combinar", "Calcule para ver"): o tema aplicava opacity .4, texto apagado demais no fundo claro */
 .cart-totals-hint{opacity:1;color:#6b5a50;font-weight:500}
-/* Checkout (resumo do pedido): selo de desconto sem fundo (texto branco), preço antigo apagado e "A combinar" quebrando em duas linhas */
-.table-price-compare{display:flex;align-items:center;justify-content:flex-end;gap:4px;margin-bottom:2px;text-decoration:none}
-.table-price-discount-tag{display:inline-block;padding:2px 6px;border-radius:999px;background:#934522;color:#fff;font-size:11px;font-weight:600;line-height:1.4;text-decoration:none}
-.table-price-compare>span:not(.table-price-discount-tag){color:#6b5a50;text-decoration:line-through}
-.table-shipping-cost td{white-space:nowrap}
-.table-shipping-cost td.text-right{color:#6b5a50}
 
 /* Gaveta do carrinho no celular: título em uma linha; quantidade à esquerda e preço à direita, em linha própria */
 @media (max-width:767px){
