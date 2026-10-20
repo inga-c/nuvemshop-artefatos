@@ -177,6 +177,10 @@ main:has(.contact-form-container) .page-header>.container{max-width:640px;margin
 #modal-cart .cart-item-subtotal{font-weight:600;color:#934522}
 #modal-cart .modal-body:has(.js-cart-item) .cart-row{margin-top:20px;padding:18px 20px;background:#fff;border:1px solid rgba(59,42,34,.12);border-radius:14px}
 #modal-cart .btn-primary{border-radius:999px;min-height:50px;box-shadow:0 14px 24px -14px rgba(147,69,34,.6)}
+/* Linhas de desconto (cupom/frete) no resumo do carrinho e da gaveta: o tema deixava o texto branco sobre fundo claro */
+.cart-totals-promotions,.cart-totals-promotions span{color:#934522}
+/* Custo de frete ("A combinar", "Calcule para ver"): o tema aplicava opacity .4, texto apagado demais no fundo claro */
+.cart-totals-hint{opacity:1;color:#6b5a50;font-weight:500}
 
 /* Gaveta do carrinho no celular: título em uma linha; quantidade à esquerda e preço à direita, em linha própria */
 @media (max-width:767px){
