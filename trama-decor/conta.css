@@ -188,7 +188,10 @@ main:has(.contact-form-container) .page-header>.container{max-width:640px;margin
 #modal-cart .modal-body{padding:20px 24px 28px}
 #modal-cart .cart-item{padding:14px;background:#fff;border:1px solid rgba(59,42,34,.12);border-radius:14px;box-shadow:0 14px 30px -22px rgba(59,42,34,.35)}
 #modal-cart .cart-item-image-container{border-radius:10px;overflow:hidden;background:#F8EBDD}
-#modal-cart .cart-item-name{font-family:"Roilega",Georgia,serif;font-size:16px;line-height:1.3;color:#3B2A22}
+#modal-cart .cart-item-name,#modal-cart .cart-item-name *{font-family:"Montserrat",system-ui,sans-serif!important}
+#modal-cart .cart-item-name{font-weight:600;font-size:14px!important;line-height:1.4!important;letter-spacing:0;color:#3B2A22}
+#modal-cart .cart-item-name-container{display:flex;flex-direction:column;gap:4px}
+#modal-cart .cart-item-name-container .cart-item-variant,#modal-cart .cart-item-name-container small{font-weight:500;font-size:13px;line-height:1.4;color:#4d3d34}
 #modal-cart .cart-item-delete-button{color:#934522;text-decoration:underline;text-underline-offset:3px}
 #modal-cart .cart-item-subtotal{font-weight:600;color:#934522}
 #modal-cart .modal-body:has(.js-cart-item) .cart-row{margin-top:20px;padding:18px 20px;background:#fff;border:1px solid rgba(59,42,34,.12);border-radius:14px}
