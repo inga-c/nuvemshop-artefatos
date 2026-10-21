@@ -365,8 +365,6 @@ body.template-product .product-content .product-free-shipping-body{width:auto;di
 .head-main.compress .js-desktop-nav-col{width:265px}
 .head-main .nav-desktop-list{display:flex;justify-content:space-between;width:100%}
 .head-main .nav-desktop-list>.nav-item{padding-left:0!important;padding-right:0!important}
-/* Respiro entre o menu e a linha de baixo do cabeçalho (com a logo maior o menu ficava colado nela) */
-.head-main .nav-desktop-container{padding-bottom:16px}
 }
 /* Celular: o espaço entre o menu e a busca (~165px) já limita a logo no topo; na rolagem ela deixa de encolher para 30px */
 @media (max-width:767px){
