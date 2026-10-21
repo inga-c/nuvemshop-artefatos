@@ -373,5 +373,7 @@ body.template-product .product-content .product-free-shipping-body{width:auto;di
 .head-main.compress .logo-img{max-height:42px}
 }
 
-/* Botões pequenos (Comprar/quickshop): garante o padding original do .btn-small do tema (a versão com o padding comentado quebra o botão no celular) */
-.btn.btn-small{padding:var(--spacing-1,6px) var(--spacing-3,16px)}
+/* Botões pequenos (Comprar/quickshop) no celular: o padding do .btn-small do tema (--spacing-1 --spacing-3) espreme o botão. Este valor segue o padding dos botões do desktop (13px 32px) */
+@media (max-width:767px){
+.btn.btn-small{padding:12px 32px}
+}
