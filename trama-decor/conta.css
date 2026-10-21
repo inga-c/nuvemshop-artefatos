@@ -267,7 +267,7 @@ body.template-product .product-content .breadcrumbs a{color:var(--pdp-muted)}
 body.template-product .product-content .product-sku{display:none}
 body.template-product .product-content .product-name{order:2;margin:0 0 12px;font-size:28px;line-height:1.2}
 body.template-product .product-content .js-price-container{order:3;margin:0;padding:0}
-body.template-product .product-content .product-price-display{font-size:34px;font-weight:600;line-height:1.1;color:var(--pdp-accent)}
+body.template-product .product-content .product-price-display{font-size:34px;font-weight:600;line-height:1.1;letter-spacing:.06em;font-variant-numeric:lining-nums tabular-nums;color:var(--pdp-accent)}
 body.template-product .product-content .js-product-discount-container{order:4;margin:6px 0 0;padding:0 0 18px;border-bottom:1px solid var(--pdp-line);font-size:13px;color:var(--pdp-muted)}
 body.template-product .product-content .js-free-shipping-minimum-message{order:5;margin-top:16px}
 
