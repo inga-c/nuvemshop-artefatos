@@ -357,8 +357,8 @@ body.template-product .product-content .product-free-shipping-body{width:auto;di
 
 /* Cabeçalho: logo maior. O tema encolhe a logo quando o cabeçalho fixa na rolagem (.compress) */
 @media (min-width:768px){
-.head-main .logo-img{max-height:135px}
-.head-main.compress .logo-img{max-height:95px}
+.head-main .logo-img{max-height:155px}
+.head-main.compress .logo-img{max-height:105px}
 /* Menu principal (Tapetes/Mantas/Kits de almofadas/Jogos americanos): os nomes são longos, então o menu não pode mais ficar preso à largura da logo. O JS do tema grava width inline na coluna (.js-desktop-nav-col), por isso o !important. Se o menu passar da largura da tela, o próprio tema mostra as setas de rolagem */
 .head-main .nav-desktop-grid{justify-content:center}
 html body .head-main .js-desktop-nav-col,html body .head-main.compress .js-desktop-nav-col{flex:0 1 auto;width:auto!important;max-width:100%}
