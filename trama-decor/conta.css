@@ -241,7 +241,7 @@ body.template-product .js-nubesdk-slot:empty{display:none}
 body.template-product #single-product .product-columns{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:start;max-width:1140px;margin:0 auto;padding:24px 16px 0}
 }
 
-/* Galeria: imagem com cantos arredondados e miniaturas em 3 colunas iguais */
+/* Galeria: imagem com cantos arredondados; miniaturas em 4 colunas embaixo (celular) ou em coluna à esquerda (desktop, bloco mais abaixo) */
 body.template-product .product-images{display:flex;flex-direction:column;gap:14px;width:100%;max-width:none;min-width:0}
 body.template-product .product-images-slider{border-radius:20px;overflow:hidden;background:#F1E3D3}
 body.template-product .product-images-thumbs{width:100%;margin:0;padding:0}
@@ -253,6 +253,15 @@ body.template-product .product-thumb{display:block;width:100%;height:100%;paddin
 body.template-product .product-thumb.selected,body.template-product .product-thumb:hover{border-color:var(--pdp-accent)}
 body.template-product .product-thumb img{width:100%;height:100%;object-fit:cover}
 body.template-product .js-product-slider-thumbs-prev,body.template-product .js-product-slider-thumbs-next{display:none}
+/* Desktop: miniaturas em coluna à esquerda e foto principal inteira (3:4) à direita; a coluna tem a altura da foto e rola sozinha se houver muitas */
+@media (min-width:768px){
+body.template-product .product-images{flex-direction:row;align-items:flex-start}
+body.template-product .product-images-slider{flex:1;min-width:0}
+body.template-product .product-images-thumbs{order:-1;flex:none;width:84px;align-self:stretch;position:relative}
+body.template-product .js-product-slider-thumbs{position:absolute;inset:0;overflow-y:auto!important;scrollbar-width:none}
+body.template-product .js-product-slider-thumbs .swiper-wrapper{grid-template-columns:1fr}
+body.template-product .product-thumb-container{aspect-ratio:3/4}
+}
 /* Produto com uma foto só (sem miniaturas): imagem quadrada, recortada e centralizada, em vez de seguir a altura da foto */
 body.template-product .product-images:not(:has(.product-thumb-container)) .product-images-slider{aspect-ratio:1/1}
 body.template-product .product-images:not(:has(.product-thumb-container)) :is(.js-product-slider,.js-product-slide){height:100%}
