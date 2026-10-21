@@ -246,9 +246,10 @@ body.template-product .product-images{display:flex;flex-direction:column;gap:14p
 body.template-product .product-images-slider{border-radius:20px;overflow:hidden;background:#F1E3D3}
 body.template-product .product-images-thumbs{width:100%;margin:0;padding:0}
 body.template-product .js-product-slider-thumbs{width:100%!important;margin:0;overflow:visible}
-body.template-product .js-product-slider-thumbs .swiper-wrapper{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:auto!important;height:auto!important;transform:none!important}
-body.template-product .product-thumb-container{width:auto!important;height:auto!important;margin:0!important;aspect-ratio:1/1}
-body.template-product .product-thumb{display:block;width:100%;height:100%;border-radius:14px;overflow:hidden;border:2px solid transparent;background:#F1E3D3;transition:border-color .2s}
+body.template-product .js-product-slider-thumbs .swiper-wrapper{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:auto!important;height:auto!important;transform:none!important}
+body.template-product .product-thumb-container{width:auto!important;height:auto!important;margin:0!important;aspect-ratio:5/4}
+/* O tema limita .product-thumb a max-height:100px e põe padding-bottom inline: sem zerar, sobrava um vão entre as fileiras */
+body.template-product .product-thumb{display:block;width:100%;height:100%;padding-bottom:0!important;max-height:none!important;border-radius:14px;overflow:hidden;border:2px solid transparent;background:#F1E3D3;transition:border-color .2s}
 body.template-product .product-thumb.selected,body.template-product .product-thumb:hover{border-color:var(--pdp-accent)}
 body.template-product .product-thumb img{width:100%;height:100%;object-fit:cover}
 body.template-product .js-product-slider-thumbs-prev,body.template-product .js-product-slider-thumbs-next{display:none}
