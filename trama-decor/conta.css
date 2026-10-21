@@ -81,6 +81,13 @@ main#MainContent section.section-main-products-grid{padding-bottom:96px!importan
 .notification-cart-container .notification-close{top:4px;right:4px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border-radius:50%;color:#934522;cursor:pointer;transition:background-color .2s}
 .notification-cart-container .notification-close:hover,.notification-cart-container .notification-close:focus-visible{background:rgba(147,69,34,.10);outline:0}
 .notification-cart-container .notification-close svg{width:14px;height:14px;fill:currentColor}
+/* Desktop: o tema deixava padding-right:48px no título (sobravam ~166px) e a Roilega em 17px quebrava em 5 linhas */
+@media (min-width:768px){
+.notification-cart-container{width:400px}
+.notification-cart-container .notification-info-container{gap:6px;padding-right:0}
+.notification-cart-container .notification-info-line{margin:0!important;padding-right:0!important}
+.notification-cart-container .notification-info-line:first-child{padding-right:30px!important;font-family:"Montserrat",system-ui,sans-serif;font-weight:600;font-size:14px;line-height:1.4;letter-spacing:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+}
 @media (max-width:767px){
 .notification-cart-container{left:12px!important;right:12px!important;width:auto;max-width:none}
 .notification-cart-container .notification-cart-image-container{width:76px;height:76px}
@@ -158,7 +165,16 @@ main:has(.contact-form-container) .page-header>.container{max-width:640px;margin
 .cart-page-item{padding:22px 0}
 .cart-page-item+.cart-page-item{border-top:1px solid rgba(59,42,34,.10)}
 .cart-page-item .cart-item-image-container{border-radius:12px;overflow:hidden;background:#F8EBDD;border:1px solid rgba(59,42,34,.08)}
-.cart-page-item .cart-item-name{font-family:"Roilega",Georgia,serif;font-size:17px!important;line-height:1.3!important;color:#3B2A22}
+/* Colunas compartilhadas entre cabeçalho e linhas: o nome tinha só ~160px e quebrava em 4 linhas */
+.cart-page-table-header{grid-template-columns:minmax(0,1fr) 330px 76px!important;column-gap:24px}
+.cart-page-table-header-totals{grid-template-columns:104px 1fr 1fr!important;column-gap:16px!important}
+.cart-page-item{grid-template-columns:96px 1fr!important;column-gap:20px}
+.cart-page-item .cart-item-image-container{width:96px}
+.cart-page-item .cart-item-info-container{grid-template-columns:minmax(0,1fr) 330px 76px!important;column-gap:24px;align-items:center}
+.cart-page-item .cart-item-totals-container{grid-template-columns:104px 1fr 1fr!important;column-gap:16px!important}
+.cart-page-item .cart-item-name-container{display:flex;flex-direction:column;gap:4px}
+.cart-page-item .cart-item-name,.cart-page-item .cart-item-name *{font-family:"Montserrat",system-ui,sans-serif!important}
+.cart-page-item .cart-item-name{font-weight:600;font-size:15px!important;line-height:1.4!important;letter-spacing:0;color:#3B2A22}
 .cart-page-item .cart-item-delete-button{color:#934522;text-decoration:underline;text-underline-offset:3px}
 .cart-page-fulfillment{justify-self:stretch!important;max-width:none!important;width:100%!important;box-sizing:border-box;background:#fff;border:1px solid rgba(59,42,34,.12);border-radius:16px;padding:20px 24px;box-shadow:0 22px 44px -28px rgba(59,42,34,.35)}
 .cart-page-summary{position:sticky;top:120px;box-sizing:border-box;background:#fff;border:1px solid rgba(59,42,34,.12);border-top:4px solid #934522;border-radius:16px;padding:26px 26px 24px;box-shadow:0 22px 44px -28px rgba(59,42,34,.35)}
@@ -295,3 +311,31 @@ body.template-product .product-content .product-free-shipping-inner .free-shippi
 body.template-product .product-content .product-free-shipping-body{width:auto;display:inline}
 .shipping-label.label{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:999px;background:#934522;color:#fff;font-size:11px;font-weight:600;letter-spacing:.04em;line-height:1.3}
 .shipping-label.label .label-icon{width:14px;height:14px;fill:currentColor;color:#fff}
+
+/* Compra rápida (modal ao clicar em "Comprar" na vitrine), desktop: imagem 3:2 deixava vazio embaixo, cantos retos, pílula de cor com retângulo de 12x18px */
+@media (min-width:768px){
+.modal:has(.quickshop-details){border-radius:20px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(59,42,34,.5),0 8px 20px -10px rgba(59,42,34,.3)}
+.modal:has(.quickshop-details) .modal-body{padding:20px}
+.quickshop-image-container{border-radius:14px;overflow:hidden;background:#F1E3D3;align-self:start}
+.quickshop-image-container .js-quickshop-image-padding{padding-bottom:100%!important;position:relative}
+.quickshop-image-container .js-quickshop-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.quickshop-details{padding:8px 4px 0 8px!important}
+.quickshop-name{font-family:"Roilega",Georgia,serif;font-size:24px!important;line-height:1.3!important;letter-spacing:.01em;color:#3B2A22;padding-right:44px}
+.quickshop-price-container{margin:4px 0 14px}
+.quickshop-price-container,.quickshop-price-container *{font-weight:600!important}
+.quickshop-price-container .js-price-display{font-size:22px;color:#934522}
+.quickshop-details .form-label{font-size:13px;color:#6b5a50;margin-bottom:8px}
+.quickshop-details .form-label strong,.quickshop-details .form-label b{color:#3B2A22}
+.quickshop-details .btn-variant{min-height:44px;height:auto;padding:0 20px;font-size:14px;border-color:rgba(59,42,34,.3);transition:border-color .2s,background-color .2s}
+.quickshop-details .btn-variant:hover{border-color:#934522}
+.quickshop-details .btn-variant.selected{border:2px solid #934522;background:rgba(147,69,34,.08);font-weight:600}
+/* Cor: a própria bolinha é o botão (sem pílula em volta); a seleção vira um anel */
+.quickshop-details .btn-variant.btn-variant-color,.quickshop-details .btn-variant.btn-variant-color:hover,.quickshop-details .btn-variant.btn-variant-color.selected{width:auto!important;min-height:0!important;height:auto!important;padding:4px!important;border:0!important;background:transparent!important;border-radius:50%!important}
+.quickshop-details .btn-variant-color .btn-variant-content{display:block;width:32px;height:32px;margin:0!important;border-radius:50%;border:1px solid rgba(59,42,34,.25);box-shadow:none;transition:box-shadow .2s}
+.quickshop-details .btn-variant-color:hover .btn-variant-content{box-shadow:0 0 0 2px #F8EBDD,0 0 0 3px rgba(147,69,34,.5)}
+.quickshop-details .btn-variant-color.selected .btn-variant-content{box-shadow:0 0 0 3px #F8EBDD,0 0 0 5px #934522}
+.quickshop-form-container .btn-primary{min-height:50px;box-shadow:0 14px 24px -14px rgba(147,69,34,.6)}
+.modal:has(.quickshop-details) [class*=close]{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background-color .2s}
+.modal:has(.quickshop-details) [class*=close]:hover{background:rgba(147,69,34,.10)}
+.modal:has(.quickshop-details) [class*=close] svg,.modal:has(.quickshop-details) [class*=close] img{width:16px;height:16px}
+}
