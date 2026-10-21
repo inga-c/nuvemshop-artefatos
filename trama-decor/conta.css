@@ -352,3 +352,18 @@ body.template-product .product-content .product-free-shipping-body{width:auto;di
 .modal:has(.quickshop-details) [class*=close]:hover{background:rgba(147,69,34,.10)}
 .modal:has(.quickshop-details) [class*=close] svg,.modal:has(.quickshop-details) [class*=close] img{width:16px;height:16px}
 }
+
+/* Cabeçalho: logo maior. O tema encolhe a logo quando o cabeçalho fixa na rolagem (.compress) */
+@media (min-width:768px){
+.head-main .logo-img{max-height:96px}
+.head-main.compress .logo-img{max-height:68px}
+/* Menu (Início/Produtos/Contato) com a mesma largura da logo: 375px = logo a 96px de altura, 265px = logo a 68px. Se mudar a altura da logo, ajuste estes dois números */
+.head-main .js-desktop-nav-col{flex:none;width:375px}
+.head-main.compress .js-desktop-nav-col{width:265px}
+.head-main .nav-desktop-list{display:flex;justify-content:space-between;width:100%}
+.head-main .nav-desktop-list>.nav-item{padding-left:0!important;padding-right:0!important}
+}
+/* Celular: o espaço entre o menu e a busca (~165px) já limita a logo no topo; na rolagem ela deixa de encolher para 30px */
+@media (max-width:767px){
+.head-main.compress .logo-img{max-height:42px}
+}
