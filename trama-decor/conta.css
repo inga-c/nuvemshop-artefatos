@@ -357,17 +357,18 @@ body.template-product .product-content .product-free-shipping-body{width:auto;di
 
 /* Cabeçalho: logo maior. O tema encolhe a logo quando o cabeçalho fixa na rolagem (.compress) */
 @media (min-width:768px){
-.head-main .logo-img{max-height:130px}
-.head-main.compress .logo-img{max-height:90px}
-/* Menu (Início/Produtos/Contato) com a mesma largura da logo: 375px = logo a 96px de altura, 265px = logo a 68px. Se mudar a altura da logo, ajuste estes dois números */
-.head-main .js-desktop-nav-col{flex:none;width:375px}
-.head-main.compress .js-desktop-nav-col{width:265px}
+.head-main .logo-img{max-height:135px}
+.head-main.compress .logo-img{max-height:95px}
+/* Menu (Início/Produtos/Contato) com a mesma largura da logo (proporção 2,5:1): 338px = logo a 135px de altura, 238px = logo a 95px. Se mudar a altura da logo, ajuste estes dois números (altura × 2,5) */
+.head-main .js-desktop-nav-col{flex:none;width:338px}
+.head-main.compress .js-desktop-nav-col{width:238px}
 .head-main .nav-desktop-list{display:flex;justify-content:space-between;width:100%}
 .head-main .nav-desktop-list>.nav-item{padding-left:0!important;padding-right:0!important}
 }
-/* Celular: o espaço entre o menu e a busca (~165px) já limita a logo no topo; na rolagem ela deixa de encolher para 30px */
+/* Celular: o tema limita a logo a 40px (--logo-height-mobile). O contêiner tem max-width 165px e a logo é ~2,45:1, então 64px de altura = ~157px de largura, cabe sem encostar nos ícones. Na rolagem ela encolhe para 48px */
 @media (max-width:767px){
-.head-main.compress .logo-img{max-height:42px}
+.head-main .logo-img{max-height:64px}
+.head-main.compress .logo-img{max-height:48px}
 }
 
 /* Botões pequenos (Comprar/quickshop) no celular: o padding do .btn-small do tema (--spacing-1 --spacing-3) espreme o botão. Este valor segue o padding dos botões do desktop (13px 32px) */
