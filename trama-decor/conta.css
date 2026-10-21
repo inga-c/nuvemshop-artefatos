@@ -357,8 +357,8 @@ body.template-product .product-content .product-free-shipping-body{width:auto;di
 
 /* Cabeçalho: logo maior. O tema encolhe a logo quando o cabeçalho fixa na rolagem (.compress) */
 @media (min-width:768px){
-.head-main .logo-img{max-height:96px}
-.head-main.compress .logo-img{max-height:68px}
+.head-main .logo-img{max-height:130px}
+.head-main.compress .logo-img{max-height:90px}
 /* Menu (Início/Produtos/Contato) com a mesma largura da logo: 375px = logo a 96px de altura, 265px = logo a 68px. Se mudar a altura da logo, ajuste estes dois números */
 .head-main .js-desktop-nav-col{flex:none;width:375px}
 .head-main.compress .js-desktop-nav-col{width:265px}
