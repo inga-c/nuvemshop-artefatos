@@ -364,8 +364,8 @@ html body .head-main>.nav-desktop-container{grid-column:2;grid-row:1;min-width:0
 html body .head-main .search-container{grid-column:3!important;grid-row:1!important}
 html body .head-main .header-account{grid-column:4!important;grid-row:1!important}
 html body .head-main .header-cart{grid-column:5!important;grid-row:1!important}
-.head-main .logo-img{max-height:96px}
-.head-main.compress .logo-img{max-height:72px}
+.head-main .logo-img{max-height:155px}
+.head-main.compress .logo-img{max-height:105px}
 /* Menu principal (Tapetes/Mantas/Kits de almofadas/Jogos americanos): os nomes são longos, então o menu não pode mais ficar preso à largura da logo. O JS do tema grava width inline na coluna (.js-desktop-nav-col), por isso o !important. Se o menu passar da largura da tela, o próprio tema mostra as setas de rolagem */
 .head-main .nav-desktop-grid{justify-content:flex-start}
 html body .head-main .js-desktop-nav-col,html body .head-main.compress .js-desktop-nav-col{flex:0 1 auto;width:auto!important;max-width:100%}
