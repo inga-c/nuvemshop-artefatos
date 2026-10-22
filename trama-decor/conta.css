@@ -521,3 +521,32 @@ section[id^=ns-section-featured_products] h2::after,section[id^=ns-section-produ
 .section-image-with-text .media-visual,.section-image-with-text .image-block{border-radius:30px;overflow:hidden}
 .product-item-image-container,.product-item-image-container img,.product-item-image-container picture{border-radius:22px}
 /* FIM LAYOUT LARGO */
+
+/* Categorias (desktop),: filtro sobe ao nível do título; "TAPETES" fica acima das fotos (recuo = coluna do filtro, 20% + 16px de gap); "Ordenar por" na linha do título, com respiro até as fotos. A grade sobe com margem negativa porque título e grade ficam em seções diferentes do tema */
+@media (min-width:768px){
+html body .section-page-header .page-header{padding:20px 0 0!important}
+html body .section-page-header .page-header-title-row{min-height:0!important;padding-left:calc((100% - 16px)*.2 + 16px)}
+html body .section-main-products-grid .container>.grid{margin-top:-41px;position:relative}
+html body .product-list-sort-by .form-group{margin-bottom:0!important}
+html body .product-list-sort-by{height:38px!important;margin:-14px 0 32px!important}
+html body .filters-controls-content{margin-top:0!important}
+html body main#MainContent section.section-main-products-grid{padding-top:0!important}
+}
+
+/* Categorias (desktop), refinamento UX: filtro fixo na rolagem, rótulos em caixa-alta, links com alvo de toque e hover; "Ordenar por" em pílula com borda e foco visível; cartões com respiro entre fileiras e sombra no hover (sem zoom: o tema centraliza a foto com transform, e um scale() a desloca) */
+@media (min-width:768px){
+html body .filters-controls-content{position:sticky;top:132px;padding:22px 22px 10px}
+html body .filters-desktop-heading{font-size:17px;letter-spacing:.01em;color:#3B2A22}
+html body .filters-categories-container .filters-title,html body .filters-properties-container .filters-title,html body .filters-properties-container .form-label,html body .filters-properties-container .filters-subtitle{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#6b5a50}
+html body .filters-options a{display:flex;align-items:center;min-height:34px;padding:2px 10px;margin:0 -10px;border-radius:10px;font-size:14px;line-height:1.35;color:#3B2A22;transition:background-color .2s,color .2s}
+html body .filters-options a:hover,html body .filters-options a:focus-visible{background:rgba(147,69,34,.08);color:#934522;outline:0}
+html body select.js-sort-by-private.form-select{min-height:40px;border:1.5px solid rgba(59,42,34,.3);border-radius:999px;background-color:#fff;color:#3B2A22;font-size:14px;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+html body select.js-sort-by-private.form-select:hover{border-color:#934522}
+html body select.js-sort-by-private.form-select:focus-visible{outline:2px solid #934522;outline-offset:2px}
+html body .product-list-sort-by label,html body .product-list-sort-by .form-label{font-size:13px;color:#6b5a50}
+html body .js-product-table{row-gap:36px}
+html body .js-product-table .product-item-image-container{box-shadow:0 14px 28px -22px rgba(59,42,34,.45);transition:box-shadow .3s}
+html body .js-product-table .product-item:hover .product-item-image-container{box-shadow:0 22px 40px -22px rgba(59,42,34,.55)}
+html body .js-product-table .product-item .product-item-name{margin-top:14px}
+html body .js-product-table .product-item .product-item-price{font-size:17px}
+}
