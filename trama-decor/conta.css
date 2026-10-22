@@ -355,14 +355,21 @@ body.template-product .product-content .product-free-shipping-body{width:auto;di
 .modal:has(.quickshop-details) [class*=close] svg,.modal:has(.quickshop-details) [class*=close] img{width:16px;height:16px}
 }
 
-/* Cabeçalho: logo maior. O tema encolhe a logo quando o cabeçalho fixa na rolagem (.compress) */
+/* Cabeçalho desktop: logo à esquerda, menu ao lado dela e busca/conta/carrinho à direita, tudo numa linha só. O .head-row e o .nav-desktop-container viram filhos diretos de uma grade no .head-main (display:contents no .head-row). O tema encolhe a logo quando o cabeçalho fixa na rolagem (.compress). Regras do tema para busca/conta/carrinho têm grid-column próprio, por isso o !important */
 @media (min-width:768px){
-.head-main .logo-img{max-height:155px}
-.head-main.compress .logo-img{max-height:105px}
+html body .head-main{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto auto;align-items:center;column-gap:8px;padding:0 40px}
+html body .head-main>.head-row{display:contents}
+html body .head-main .logo-container{grid-column:1!important;grid-row:1;margin-right:32px}
+html body .head-main>.nav-desktop-container{grid-column:2;grid-row:1;min-width:0}
+html body .head-main .search-container{grid-column:3!important;grid-row:1!important}
+html body .head-main .header-account{grid-column:4!important;grid-row:1!important}
+html body .head-main .header-cart{grid-column:5!important;grid-row:1!important}
+.head-main .logo-img{max-height:96px}
+.head-main.compress .logo-img{max-height:72px}
 /* Menu principal (Tapetes/Mantas/Kits de almofadas/Jogos americanos): os nomes são longos, então o menu não pode mais ficar preso à largura da logo. O JS do tema grava width inline na coluna (.js-desktop-nav-col), por isso o !important. Se o menu passar da largura da tela, o próprio tema mostra as setas de rolagem */
-.head-main .nav-desktop-grid{justify-content:center}
+.head-main .nav-desktop-grid{justify-content:flex-start}
 html body .head-main .js-desktop-nav-col,html body .head-main.compress .js-desktop-nav-col{flex:0 1 auto;width:auto!important;max-width:100%}
-html body .head-main ul.nav-desktop-list{display:flex;flex-wrap:nowrap;justify-content:center;width:max-content;max-width:100%}
+html body .head-main ul.nav-desktop-list{display:flex;flex-wrap:nowrap;justify-content:flex-start;width:max-content;max-width:100%}
 html body .head-main ul.nav-desktop-list>li.nav-item.nav-main-item{flex:0 0 auto;white-space:nowrap;padding-left:clamp(14px,1.6vw,26px)!important;padding-right:clamp(14px,1.6vw,26px)!important}
 html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link{position:relative;padding:6px 0;white-space:nowrap;font-size:12.5px;font-weight:500;letter-spacing:.14em;color:#3B2A22;transition:color .2s}
 html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:#934522;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
