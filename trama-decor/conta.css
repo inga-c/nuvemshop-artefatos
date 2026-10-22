@@ -320,8 +320,8 @@ body.template-product .product-content .product-price-display{font-size:21px}
 
 /* Página de produto, ajustes na linha da Brilhar: título grande em Roilega, preço maior, COMPRAR logo após as variações e cálculo de frete em cartão abaixo dele */
 @media (min-width:768px){
-body.template-product .product-content .product-name,body.template-product .product-content .product-name *{font-family:"Roilega",Georgia,serif;font-weight:400;font-size:28px;line-height:1.5!important;letter-spacing:.01em;color:#3B2A22}
-body.template-product .product-content .product-name{margin-bottom:22px}
+body.template-product .product-content .product-name,body.template-product .product-content .product-name *{font-family:"Roilega",Georgia,serif;font-weight:400;font-size:18px;line-height:1.35!important;letter-spacing:.01em;color:#3B2A22}
+body.template-product .product-content .product-name{margin-bottom:12px}
 /* Descrição embaixo da galeria (coluna da esquerda): o .product-info (d-flex !important no tema) vira display:contents para a descrição virar item da grade */
 body.template-product #single-product .product-columns{row-gap:32px}
 body.template-product #single-product .product-columns .js-product-info{display:contents!important}
