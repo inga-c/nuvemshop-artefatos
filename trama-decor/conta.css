@@ -425,6 +425,16 @@ html body .head-main ul.nav-desktop-list>li.nav-main-item{pointer-events:none}
 html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link,html body .head-main ul.nav-desktop-list>li.nav-main-item>.nav-dropdown-content{pointer-events:auto}
 html body .head-main ul.nav-desktop-list>li.nav-dropdown:hover>a.nav-list-link::before{content:"";position:absolute;left:-24px;right:-24px;top:100%;height:60px}
 }
+/* Submenu compacto em tela pequena (notebook ~1366x768 ou janela baixa): menos respiro, colunas e texto menores, e o painel nunca passa da altura da janela (rola por dentro). html body para vencer o CSS do admin, que carrega depois do @import */
+@media (min-width:768px) and (max-width:1440px),(min-width:768px) and (max-height:800px){
+html body .head-main .js-desktop-dropdown.nav-dropdown-content{max-height:calc(100vh - 150px)!important;overflow-y:auto}
+html body .desktop-dropdown .desktop-dropdown-container{max-width:980px;padding:22px 28px 26px}
+html body .desktop-dropdown ul.desktop-list-subitems{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px 32px}
+html body .desktop-dropdown ul.desktop-list-subitems>li.nav-item>a.nav-list-link{font-size:12px!important;padding-bottom:8px;margin-bottom:8px}
+html body .desktop-dropdown ul.list-subitems a.nav-list-link{font-size:13px!important;padding:3px 0}
+}
+/* Rolagem lateral em tela pequena: o ícone da seta dos carrosséis de produtos tem 32px dentro de um botão de 30px e vaza 2px além da janela. Limita o ícone ao botão */
+html body [class*=swiper-button] svg.slider-arrow{max-width:100%;max-height:100%}
 @media (prefers-reduced-motion:reduce){html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link,html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link::after{transition:none}}
 /* Busca/conta/carrinho: "Buscar" e "R$0,00" caíam em Arial preto (spans/botões não herdam a fonte) e os ícones vinham em #8B0000. Alinha à marca: Montserrat, texto marrom, ícones terracota, respiro entre os três grupos e alvo de toque de 44px */
 html body .head-main .header-utility,html body .head-main .header-utility *:not(svg):not(path){font-family:"Montserrat",system-ui,sans-serif}
