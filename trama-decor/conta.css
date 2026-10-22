@@ -359,8 +359,9 @@ body.template-product .product-content .product-free-shipping-body{width:auto;di
 @media (min-width:768px){
 html body .head-main{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto auto;align-items:center;column-gap:8px;padding:0 40px}
 html body .head-main>.head-row{display:contents}
-html body .head-main .logo-container{grid-column:1!important;grid-row:1;margin-right:32px}
-html body .head-main>.nav-desktop-container{grid-column:2;grid-row:1;min-width:0}
+html body .head-main .logo-container{grid-column:1!important;grid-row:1;margin-right:-24px!important;width:auto!important}
+/* Menu: por padrão fica na coluna do meio (entre a logo e os ícones) e, se não couber, o tema mostra as setas de rolagem. O contêiner fica dentro do .head-row, por isso não é filho direto do .head-main */
+html body .head-main .nav-desktop-container{grid-column:2!important;grid-row:1!important;justify-self:center;width:auto;max-width:100%;min-width:0}
 html body .head-main .search-container{grid-column:3!important;grid-row:1!important}
 html body .head-main .header-account{grid-column:4!important;grid-row:1!important}
 html body .head-main .header-cart{grid-column:5!important;grid-row:1!important}
@@ -371,13 +372,40 @@ html body .head-main .search-floating-container{left:auto!important;right:0!impo
 /* Menu principal (Tapetes/Mantas/Kits de almofadas/Jogos americanos): os nomes são longos, então o menu não pode mais ficar preso à largura da logo. O JS do tema grava width inline na coluna (.js-desktop-nav-col), por isso o !important. Se o menu passar da largura da tela, o próprio tema mostra as setas de rolagem */
 .head-main .nav-desktop-grid{justify-content:flex-start}
 html body .head-main .js-desktop-nav-col,html body .head-main.compress .js-desktop-nav-col{flex:0 1 auto;width:auto!important;max-width:100%}
-html body .head-main ul.nav-desktop-list{display:flex;flex-wrap:nowrap;justify-content:flex-start;width:max-content;max-width:100%}
-html body .head-main ul.nav-desktop-list>li.nav-item.nav-main-item{flex:0 0 auto;white-space:nowrap;padding-left:clamp(14px,1.6vw,26px)!important;padding-right:clamp(14px,1.6vw,26px)!important}
-html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link{position:relative;padding:6px 0;white-space:nowrap;font-size:12.5px;font-weight:500;letter-spacing:.14em;color:#3B2A22;transition:color .2s}
+html body .head-main ul.nav-desktop-list{display:flex;flex-wrap:nowrap;justify-content:flex-start;width:max-content;max-width:100%;padding-left:0!important;padding-right:0!important}
+/* Setas de rolagem (só aparecem quando o menu não cabe): fundo creme em vez do branco do tema */
+html body .head-main .js-nav-desktop-list-arrow{background:#F8EBDD}
+html body .head-main ul.nav-desktop-list>li.nav-item.nav-main-item{flex:0 0 auto;white-space:nowrap;padding-left:clamp(10px,1.1vw,20px)!important;padding-right:clamp(10px,1.1vw,20px)!important}
+html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link{position:relative;padding:6px 0;white-space:nowrap;font-size:12px;font-weight:500;letter-spacing:.12em;color:#3B2A22;transition:color .2s}
 html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:#934522;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
 html body .head-main ul.nav-desktop-list>li.nav-main-item:hover>a.nav-list-link,html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link:focus-visible{color:#934522}
 html body .head-main ul.nav-desktop-list>li.nav-main-item:hover>a.nav-list-link::after,html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link:focus-visible::after{transform:scaleX(1)}
 @media (prefers-reduced-motion:reduce){html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link,html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link::after{transition:none}}
+/* Busca/conta/carrinho: "Buscar" e "R$0,00" caíam em Arial preto (spans/botões não herdam a fonte) e os ícones vinham em #8B0000. Alinha à marca: Montserrat, texto marrom, ícones terracota, respiro entre os três grupos e alvo de toque de 44px */
+html body .head-main .header-utility,html body .head-main .header-utility *:not(svg):not(path){font-family:"Montserrat",system-ui,sans-serif}
+html body .head-main .header-utility,html body .head-main .header-utility .utility-text,html body .head-main .header-utility a,html body .head-main .header-utility span{color:#3B2A22}
+html body .head-main .header-utility{min-height:44px;transition:color .2s}
+/* Ícone colado no texto (o tema dá 40px de caixa ao ícone) e respiro entre busca, conta e carrinho */
+html body .head-main .header-utility{gap:8px!important}
+html body .head-main .header-utility .header-icon{width:auto!important;margin:0!important}
+html body .head-main .search-container,html body .head-main .header-account{margin-right:22px}
+html body .head-main .header-utility:hover,html body .head-main .header-utility:hover .utility-text{color:#934522}
+html body .head-main .header-utility svg,html body .head-main .header-utility .header-icon{fill:#934522;color:#934522}
+html body .head-main .header-utility:focus-visible,html body .head-main .header-utility a:focus-visible{outline:2px solid #934522;outline-offset:3px;border-radius:6px}
+}
+
+/* Tela larga (sobra espaço dos dois lados): o menu ocupa a linha toda e centraliza na janela (alinhado ao hero). pointer-events evita cobrir logo/ícones */
+@media (min-width:1800px){
+html body .head-main .nav-desktop-container{grid-column:1/-1!important;width:max-content;pointer-events:none}
+html body .head-main .nav-desktop-container *{pointer-events:auto}
+}/* Tela média (menu não cabe inteiro): reserva 40px de cada lado para as setas de rolagem do tema não cobrirem os itens, aperta o respiro dos ícones e encolhe a logo para dar mais largura ao menu */
+@media (min-width:768px) and (max-width:1799px){
+html body .head-main ul.nav-desktop-list{padding-left:40px!important;padding-right:40px!important}
+html body .head-main .search-container,html body .head-main .header-account{margin-right:14px}
+}
+@media (min-width:768px) and (max-width:1599px){
+.head-main .logo-img{max-height:clamp(84px,8vw,112px)}
+.head-main.compress .logo-img{max-height:80px}
 }
 /* Celular: o tema limita a logo a 40px (--logo-height-mobile). O contêiner tem max-width 165px e a logo é ~2,45:1, então 64px de altura = ~157px de largura, cabe sem encostar nos ícones. Na rolagem ela encolhe para 48px */
 @media (max-width:767px){
