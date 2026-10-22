@@ -419,6 +419,12 @@ html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link{positi
 html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:#934522;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
 html body .head-main ul.nav-desktop-list>li.nav-main-item:hover>a.nav-list-link,html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link:focus-visible{color:#934522}
 html body .head-main ul.nav-desktop-list>li.nav-main-item:hover>a.nav-list-link::after,html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link:focus-visible::after{transform:scaleX(1)}
+/* Dropdown abrindo sozinho ao rolar: o cabeçalho fixo sobe por baixo do cursor parado e o tema abre o submenu (Banheiro, no canto). Só o link (e o painel aberto) recebe o mouse, não o <li> inteiro; a ponte ::before liga o link ao painel enquanto o submenu está aberto */
+@media (min-width:768px){
+html body .head-main ul.nav-desktop-list>li.nav-main-item{pointer-events:none}
+html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link,html body .head-main ul.nav-desktop-list>li.nav-main-item>.nav-dropdown-content{pointer-events:auto}
+html body .head-main ul.nav-desktop-list>li.nav-dropdown:hover>a.nav-list-link::before{content:"";position:absolute;left:-24px;right:-24px;top:100%;height:60px}
+}
 @media (prefers-reduced-motion:reduce){html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link,html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link::after{transition:none}}
 /* Busca/conta/carrinho: "Buscar" e "R$0,00" caíam em Arial preto (spans/botões não herdam a fonte) e os ícones vinham em #8B0000. Alinha à marca: Montserrat, texto marrom, ícones terracota, respiro entre os três grupos e alvo de toque de 44px */
 html body .head-main .header-utility,html body .head-main .header-utility *:not(svg):not(path){font-family:"Montserrat",system-ui,sans-serif}
