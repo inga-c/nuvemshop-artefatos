@@ -427,6 +427,9 @@ html body .head-main ul.nav-desktop-list>li.nav-main-item:hover>a.nav-list-link:
 html body .head-main ul.nav-desktop-list>li.nav-main-item{pointer-events:none}
 html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link,html body .head-main ul.nav-desktop-list>li.nav-main-item>.nav-dropdown-content{pointer-events:auto}
 html body .head-main ul.nav-desktop-list>li.nav-dropdown:hover>a.nav-list-link::before{content:"";position:absolute;left:-24px;right:-24px;top:100%;height:60px}
+/* "Minha conta" (Olá/Sair ou Entrar/Criar conta) fechava sozinho ao descer o mouse: o painel abre 8px abaixo do gatilho e, nesse vão, o :hover se perde. Ponte invisível no próprio gatilho enquanto está em hover (não no painel: ele tem overflow:auto e cortaria a ponte). !important porque o tema já define um ::after com altura 0 */
+html body .head-main .header-account{position:relative}
+html body .head-main .header-account:hover::after,html body .head-main .header-account:focus-within::after{content:""!important;position:absolute!important;left:-16px!important;right:-16px!important;top:100%!important;width:auto!important;height:20px!important;display:block!important}
 }
 /* Submenu compacto em tela pequena (notebook ~1366x768 ou janela baixa): menos respiro, colunas e texto menores, e o painel nunca passa da altura da janela (rola por dentro). html body para vencer o CSS do admin, que carrega depois do @import */
 @media (min-width:768px) and (max-width:1440px),(min-width:768px) and (max-height:800px){
