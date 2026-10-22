@@ -111,6 +111,9 @@ main:has(.products-grid-search-suggestion) .section-page-header{min-height:0!imp
 main:has(.products-grid-search-suggestion) .page-header{padding-bottom:0!important}
 main:has(.products-grid-search-suggestion) .section-main-products-grid{padding-top:8px!important;padding-bottom:64px!important}
 main:has(.products-grid-search-suggestion) .page-header-title{font-size:28px;line-height:1.15}
+/* Título das páginas (categorias, busca etc.): menor e em marrom escuro. !important porque o tema fixa o tamanho (40px no desktop) */
+html body .page-header-title,html body .page-header h1.page-header-title{font-size:24px!important;color:#C76F4E!important}
+@media(max-width:767px){html body .page-header-title,html body .page-header h1.page-header-title{font-size:22px!important}}
 
 /* Aviso "Adicionado ao carrinho" no celular: nome menor, até 3 linhas */
 @media (max-width:767px){
@@ -415,9 +418,9 @@ html body .head-main ul.nav-desktop-list{display:flex;flex-wrap:nowrap;justify-c
 /* Setas de rolagem (só aparecem quando o menu não cabe): fundo creme em vez do branco do tema */
 html body .head-main .js-nav-desktop-list-arrow{background:#F8EBDD}
 html body .head-main ul.nav-desktop-list>li.nav-item.nav-main-item{flex:0 0 auto;white-space:nowrap;padding-left:clamp(10px,1.1vw,20px)!important;padding-right:clamp(10px,1.1vw,20px)!important}
-html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link{position:relative;padding:6px 0;white-space:nowrap;font-size:12px;font-weight:500;letter-spacing:.12em;color:#3B2A22;transition:color .2s}
-html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:#934522;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
-html body .head-main ul.nav-desktop-list>li.nav-main-item:hover>a.nav-list-link,html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link:focus-visible{color:#934522}
+html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link{position:relative;padding:6px 0;white-space:nowrap;font-size:12px;font-weight:500;letter-spacing:.12em;color:#C76F4E;transition:color .2s}
+html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:#C76F4E;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+html body .head-main ul.nav-desktop-list>li.nav-main-item:hover>a.nav-list-link,html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link:focus-visible{color:#C76F4E}
 html body .head-main ul.nav-desktop-list>li.nav-main-item:hover>a.nav-list-link::after,html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link:focus-visible::after{transform:scaleX(1)}
 /* Dropdown abrindo sozinho ao rolar: o cabeçalho fixo sobe por baixo do cursor parado e o tema abre o submenu (Banheiro, no canto). Só o link (e o painel aberto) recebe o mouse, não o <li> inteiro; a ponte ::before liga o link ao painel enquanto o submenu está aberto */
 @media (min-width:768px){
@@ -433,20 +436,26 @@ html body .desktop-dropdown ul.desktop-list-subitems{grid-template-columns:repea
 html body .desktop-dropdown ul.desktop-list-subitems>li.nav-item>a.nav-list-link{font-size:12px!important;padding-bottom:8px;margin-bottom:8px}
 html body .desktop-dropdown ul.list-subitems a.nav-list-link{font-size:13px!important;padding:3px 0}
 }
+/* Montserrat Medium (500) nos itens do menu principal e nos links dos submenus (títulos de coluna e subitens) */
+html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link,html body .desktop-dropdown a.nav-list-link{font-family:Montserrat,sans-serif!important;font-weight:500!important}
+html body .desktop-dropdown a.nav-list-link:not(:hover):not(:focus-visible){color:#C76F4E}
 /* Rolagem lateral em tela pequena: o ícone da seta dos carrosséis de produtos tem 32px dentro de um botão de 30px e vaza 2px além da janela. Limita o ícone ao botão */
 html body [class*=swiper-button] svg.slider-arrow{max-width:100%;max-height:100%}
 @media (prefers-reduced-motion:reduce){html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link,html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link::after{transition:none}}
 /* Busca/conta/carrinho: "Buscar" e "R$0,00" caíam em Arial preto (spans/botões não herdam a fonte) e os ícones vinham em #8B0000. Alinha à marca: Montserrat, texto marrom, ícones terracota, respiro entre os três grupos e alvo de toque de 44px */
 html body .head-main .header-utility,html body .head-main .header-utility *:not(svg):not(path){font-family:"Montserrat",system-ui,sans-serif}
-html body .head-main .header-utility,html body .head-main .header-utility .utility-text,html body .head-main .header-utility a,html body .head-main .header-utility span{color:#3B2A22}
+html body .head-main .header-utility,html body .head-main .header-utility .utility-text,html body .head-main .header-utility a,html body .head-main .header-utility span{color:#C76F4E}
 html body .head-main .header-utility{min-height:44px;transition:color .2s}
 /* Ícone colado no texto (o tema dá 40px de caixa ao ícone) e respiro entre busca, conta e carrinho */
 html body .head-main .header-utility{gap:8px!important}
 html body .head-main .header-utility .header-icon{width:auto!important;margin:0!important}
 html body .head-main .search-container,html body .head-main .header-account{margin-right:22px}
-html body .head-main .header-utility:hover,html body .head-main .header-utility:hover .utility-text{color:#934522}
+html body .head-main .header-utility:hover,html body .head-main .header-utility:hover .utility-text{color:#C76F4E}
 html body .head-main .header-utility svg,html body .head-main .header-utility .header-icon{fill:#934522;color:#934522}
 html body .head-main .header-utility:focus-visible,html body .head-main .header-utility a:focus-visible{outline:2px solid #934522;outline-offset:3px;border-radius:6px}
+/* Número da sacola: o ícone agora tem só 16px de largura, então o selo sai do canto inferior e vai para o canto superior direito do ícone; fundo terracota com número branco (a regra de cor do cabeçalho deixava o número terracota sobre fundo preto) */
+html body .head-main .header-utility .header-icon .badge.js-cart-widget-amount{top:3px;right:-15px;bottom:auto;left:auto;display:block;box-sizing:border-box;min-width:19px;height:19px;padding:0 5px;border:0;background:transparent;color:#C76F4E;font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;line-height:19px;letter-spacing:0;text-align:center;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;box-shadow:none}
+html body .head-main .header-utility:has(.js-cart-widget-total){gap:20px!important}
 }
 
 /* Tela larga (sobra espaço dos dois lados): o menu ocupa a linha toda e centraliza na janela (alinhado ao hero). pointer-events evita cobrir logo/ícones */
