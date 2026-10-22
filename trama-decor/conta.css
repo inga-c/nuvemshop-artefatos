@@ -437,8 +437,15 @@ html body .desktop-dropdown ul.desktop-list-subitems>li.nav-item>a.nav-list-link
 html body .desktop-dropdown ul.list-subitems a.nav-list-link{font-size:13px!important;padding:3px 0}
 }
 /* Montserrat Medium (500) nos itens do menu principal e nos links dos submenus (títulos de coluna e subitens) */
-html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link,html body .desktop-dropdown a.nav-list-link{font-family:Montserrat,sans-serif!important;font-weight:500!important;text-shadow:0 1px 2px rgba(59,42,34,.28)}
-html body .desktop-dropdown a.nav-list-link:not(:hover):not(:focus-visible){color:#C76F4E}
+html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link,html body .desktop-dropdown a.nav-list-link{font-family:Montserrat,sans-serif!important;font-weight:700!important;text-shadow:none}
+/* O tema pinta os subitens de marrom escuro com seletor mais específico; !important para ficarem terracota como o menu principal */
+html body .desktop-dropdown a.nav-list-link,html body .desktop-dropdown a.nav-list-link.nav-list-link-heading,html body .desktop-dropdown a.nav-list-link *{color:#C76F4E!important}
+/* Busca/conta/carrinho em negrito, igual ao menu */
+@media (min-width:768px){
+html body .head-main .header-utility,html body .head-main .header-utility .utility-text,html body .head-main .header-utility a,html body .head-main .header-utility span:not(.badge){font-weight:700!important}
+html body .head-main ul.nav-desktop-list>li.nav-item.nav-main-item{padding-left:8px!important;padding-right:8px!important}
+html body .head-main .nav-desktop-container{margin-right:16px}
+}
 /* Rolagem lateral em tela pequena: o ícone da seta dos carrosséis de produtos tem 32px dentro de um botão de 30px e vaza 2px além da janela. Limita o ícone ao botão */
 html body [class*=swiper-button] svg.slider-arrow{max-width:100%;max-height:100%}
 @media (prefers-reduced-motion:reduce){html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link,html body .head-main ul.nav-desktop-list>li.nav-main-item>a.nav-list-link::after{transition:none}}
