@@ -273,6 +273,19 @@ body.template-product .product-images:not(:has(.product-thumb-container)) .produ
 body.template-product .product-images:not(:has(.product-thumb-container)) :is(.js-product-slider,.js-product-slide){height:100%}
 body.template-product .product-images:not(:has(.product-thumb-container)) .product-slide-link{display:block;height:100%;padding-bottom:0!important}
 body.template-product .product-images:not(:has(.product-thumb-container)) .product-slider-image{top:0;left:0;width:100%!important;height:100%!important;max-height:none!important;transform:none;object-fit:cover}
+/* Desktop: galeria com a mesma altura da coluna da direita (info + cartões), foto rente ao último cartão. O tema põe dois div.w-100 vazios na galeria (flex-wrap): empurravam a foto 14px para baixo e deixavam um vão embaixo; esticar sem escondê-los quebra a linha */
+@media (min-width:768px){
+body.template-product .product-images{flex-wrap:nowrap;align-self:stretch;align-items:stretch}
+body.template-product .product-images>.w-100{display:none}
+body.template-product .product-images-slider{margin:0;height:auto}
+body.template-product .product-images-slider :is(.js-product-slider,.swiper-wrapper,.js-product-slide){height:100%}
+body.template-product .product-images-slider .product-slide-link{display:block;height:100%;padding-bottom:0!important}
+body.template-product .product-images-slider .product-slide-link .product-slider-image{top:0;left:0;width:100%!important;height:100%!important;max-height:none!important;transform:none;object-fit:cover}
+}
+/* Zoom ao passar o mouse (static/js/image-zoom.js põe .is-zooming e o transform-origin): as regras acima zeram o transform da foto e anulariam o scale(2) do tema; esta é mais específica e o devolve */
+@media (hover:hover) and (pointer:fine){
+body.template-product .product-images-slider .product-slide-link.is-zooming .product-slider-image{transform:scale(2)}
+}
 
 /* Informações: o form usa display:contents para variações, frete e botão seguirem a ordem abaixo (envio e scripts do tema intactos) */
 body.template-product .product-info{width:auto;max-width:none;min-width:0;padding:0}
